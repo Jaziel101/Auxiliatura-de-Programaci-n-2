@@ -1,1 +1,1 @@
-# Auxiliatura-de-Programaci-n-2
+# Auxiliatura-de-Programacion-2
