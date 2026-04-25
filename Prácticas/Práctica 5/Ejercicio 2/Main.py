@@ -12,7 +12,7 @@ def main():
     
     p1 = Perro("Max", 5, "Juan Perez", True, True)
     p2 = Perro("Luna", 3, "Maria Gomez", False, False)
-    p3 = Perro("Rocky", 3, "Maria Gomez", True, True)  # Misma edad y dueña que Luna
+    p3 = Perro("Rocky", 3, "Maria Gomez", True, True)  
     
     centro1.agregar_perro(p1)
     centro1.agregar_perro(p2)
@@ -30,7 +30,7 @@ def main():
     
     p4 = Perro("Bobby", 8, "Ana Condori", True, False)
     p5 = Perro("Rex", 4, "Pedro Mamani", False, True)
-    p6 = Perro("Rex", 4, "Pedro Mamani", False, True)  # Mismo nombre y dueño
+    p6 = Perro("Rex", 4, "Pedro Mamani", False, True) 
     
     centro2.agregar_perro(p4)
     centro2.agregar_perro(p5)
