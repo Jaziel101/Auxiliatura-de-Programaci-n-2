@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagrama UML - Agregación Biblioteca y Libro</title>
+    <link rel="stylesheet" href="Estilos/estilos1.css">
+</head>
+<body>
+    <div class="diagram">
+        <!-- Clase Biblioteca -->
+        <div class="class-box">
+            <div class="class-title">Biblioteca</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attribute">- nombre: String</div>
+                <div class="attribute">- cantLibros: int</div>
+                <div class="attribute">- libros: Libro[100]</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ Biblioteca(nombre: String)</div>
+                <div class="method">+ agregarLibro(libro: Libro): boolean</div>
+                <div class="method">+ buscarLibroPorNombre(nombre: String): Libro</div>
+                <div class="method">+ mostrarLibros(): void</div>
+                <div class="method">+ getNombre(): String</div>
+                <div class="method">+ getCantLibros(): int</div>
+            </div>
+        </div>
+
+        <!-- Flecha de agregación -->
+        <div class="arrow">
+            ◇──────────▶
+            <div class="multiplicity">1</div>
+        </div>
+
+        <!-- Clase Libro -->
+        <div class="class-box">
+            <div class="class-title">Libro</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attribute">- nombre: String</div>
+                <div class="attribute">- autor: String</div>
+                <div class="attribute">- año: int</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ Libro(nombre: String, autor: String, año: int)</div>
+                <div class="method">+ getNombre(): String</div>
+                <div class="method">+ getAutor(): String</div>
+                <div class="method">+ getAño(): int</div>
+                <div class="method">+ mostrarInfo(): void</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

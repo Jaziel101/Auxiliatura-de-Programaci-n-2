@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UML - Centro Veterinario (Python)</title>
+    <link rel="stylesheet" href="Estilos/estilos2.css">
+</head>
+<body>
+<div class="uml-container">
+    <div class="uml">
+        <!-- Clase Animal -->
+        <div>
+            <div class="class">
+                <div class="class-header abstract">«abstract» Animal</div>
+                <div class="class-section">
+                    <h4>Atributos</h4>
+                    <div class="attr">- _nombre: str</div>
+                    <div class="attr">- _edad: int</div>
+                    <div class="attr">- _nombre_dueno: str</div>
+                </div>
+                <div class="class-section">
+                    <h4>Métodos</h4>
+                    <div class="method">+ __init__(nombre, edad, dueno)</div>
+                    <div class="method">+ nombre (property)</div>
+                    <div class="method">+ edad (property)</div>
+                    <div class="method">+ nombre_dueno (property)</div>
+                    <div class="method">«abstract» + mostrar_info()</div>
+                </div>
+            </div>
+            <div class="inherit-group" style="margin-top: 10px;">
+                <div class="triangle"></div>
+                <div class="line-v"></div>
+            </div>
+            <div class="class" style="margin-top: 5px;">
+                <div class="class-header">Perro</div>
+                <div class="class-section">
+                    <h4>Atributos</h4>
+                    <div class="attr">- _requiere_bosal: bool</div>
+                    <div class="attr">- _ladra_fuerte: bool</div>
+                </div>
+                <div class="class-section">
+                    <h4>Métodos</h4>
+                    <div class="method">+ __init__(...)</div>
+                    <div class="method">+ mostrar_info()</div>
+                </div>
+            </div>
+            <div class="inherit-group" style="margin-top: 10px;">
+                <div class="triangle"></div>
+                <div class="line-v"></div>
+            </div>
+            <div class="class" style="margin-top: 5px;">
+                <div class="class-header">Gato</div>
+                <div class="class-section">
+                    <h4>Atributos</h4>
+                    <div class="attr">- _caza_ratones: bool</div>
+                    <div class="attr">- _toma_leche: bool</div>
+                </div>
+                <div class="class-section">
+                    <h4>Métodos</h4>
+                    <div class="method">+ __init__(...)</div>
+                    <div class="method">+ mostrar_info()</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Relación de agregación -->
+        <div class="relation">
+            <div style="font-size: 30px;">◇</div>
+            <div style="font-size: 12px; color:#e74c3c;">1</div>
+        </div>
+
+        <!-- Clase CentroVeterinario -->
+        <div class="class">
+            <div class="class-header">CentroVeterinario</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- _nombre: str</div>
+                <div class="attr">- _perros: list[Perro]</div>
+                <div class="attr">- _gatos: list[Gato]</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ __init__(nombre)</div>
+                <div class="method">+ agregar_perro(perro): bool</div>
+                <div class="method">+ agregar_gato(gato): bool</div>
+                <div class="method">+ ordenar_perros(): void</div>
+                <div class="method">+ ordenar_gatos(): void</div>
+                <div class="method">+ verificar_animales_mismo_dueno(): void</div>
+                <div class="method">+ mostrar_perros(): void</div>
+                <div class="method">+ mostrar_gatos(): void</div>
+                <div class="method">+ mostrar_todos(): void</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
