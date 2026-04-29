@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UML - Edificio, Parqueo, Departamento, Habitación, Mueble</title>
+    <link rel="stylesheet" href="Estilos/estilos1.css">
+</head>
+<body>
+<div class="uml-container">
+    <div class="legend">
+        <div class="legend-item"><span class="agregation">◇</span> = Agregación</div>
+        <div class="legend-item"><span class="composition-symbol">◆</span> = Composición</div>
+    </div>
+    <div class="uml">
+        <div class="class">
+            <div class="class-header">Edificio</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- _nombre: str</div>
+                <div class="attr">- _superficie: float</div>
+                <div class="attr">- _cant_dep: int</div>
+                <div class="attr">- _departamentos: list[Departamento]</div>
+                <div class="attr">- _parqueo: Parqueo</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ __init__(nombre, superficie)</div>
+                <div class="method">+ agregar_parqueo(parqueo)</div>
+                <div class="method">+ agregar_departamento(dep)</div>
+                <div class="method">+ departamento_mas_habitaciones_por_piso(piso)</div>
+                <div class="method">+ agregar_mueble_a_departamento(piso, puerta, hab, mueble)</div>
+                <div class="method">+ departamentos_con_mas_muebles()</div>
+                <div class="method">+ habitacion_con_mas_muebles_por_piso(piso)</div>
+                <div class="method">+ eliminar_departamentos_habitaciones_primas()</div>
+                <div class="method">+ mostrar_info()</div>
+            </div>
+        </div>
+
+        <div class="relation">
+            <div class="diamond">◇</div>
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div class="multiplicity">1</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Parqueo</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- _capacidad: int</div>
+                <div class="attr">- _precio_hora: float</div>
+                <div class="attr">- _cant_autos: int</div>
+                <div class="attr">- _placas: list[str]</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ __init__(capacidad, precio_hora)</div>
+                <div class="method">+ ingresar_auto(placa): bool</div>
+                <div class="method">+ retirar_auto(placa): bool</div>
+                <div class="method">+ mostrar_info()</div>
+            </div>
+        </div>
+
+        <div class="relation">
+            <div class="composition">◆</div>
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div class="multiplicity">1..100</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Departamento</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- _nro_puerta: int</div>
+                <div class="attr">- _nro_piso: int</div>
+                <div class="attr">- _nro_hab: int</div>
+                <div class="attr">- _habitaciones: list[Habitacion]</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ __init__(nro_puerta, nro_piso)</div>
+                <div class="method">+ agregar_habitacion(habitacion): bool</div>
+                <div class="method">+ agregar_mueble_por_nombre(nombre_hab, mueble)</div>
+                <div class="method">+ total_muebles(): int</div>
+                <div class="method">+ mostrar_habitaciones()</div>
+            </div>
+        </div>
+
+        <div class="relation">
+            <div class="composition">◆</div>
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div class="multiplicity">1..100</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Habitacion</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- _nombre: str</div>
+                <div class="attr">- _tamano: float</div>
+                <div class="attr">- _cant_muebles: int</div>
+                <div class="attr">- _muebles: list[Mueble]</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ __init__(nombre, tamano)</div>
+                <div class="method">+ agregar_mueble(mueble): bool</div>
+                <div class="method">+ mostrar_info()</div>
+            </div>
+        </div>
+
+        <div class="relation">
+            <div class="composition">◆</div>
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div class="multiplicity">1..100</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Mueble</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- _tipo: str</div>
+                <div class="attr">- _material: str</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ __init__(tipo, material)</div>
+                <div class="method">+ mostrar_info()</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

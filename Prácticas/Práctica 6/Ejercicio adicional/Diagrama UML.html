@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagrama UML - Sistema Kardex UMSA</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+<div class="diagram-container">
+    
+    <div class="legend">
+        <div class="legend-item"><span class="diamond">◇</span> = Agregación</div>
+        <div class="legend-item"><span class="composition">◆</span> = Composición</div>
+        <div class="legend-item"><span style="font-size:20px;">—</span> = Asociación</div>
+        <div class="legend-item"><span class="inheritance">△</span> = Herencia</div>
+    </div>
+
+    <div class="uml">
+        
+        <div class="class">
+            <div class="class-header">«abstract» Persona</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- ci: String</div>
+                <div class="attr">- nombre: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ mostrarDatos(): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="inheritance">△</div>
+            <div class="line-v"></div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Estudiante</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- codigo: String</div>
+                <div class="attr">- semestre: int</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ inscribirMateria(materia): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="multiplicity">1..*</div>
+            <div class="line-v"></div>
+            <div>◀─────▶</div>
+            <div class="multiplicity">1..*</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Materia</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- sigla: String</div>
+                <div class="attr">- nombre: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ agregarEstudiante(estudiante): void</div>
+                <div class="method">+ asignarDocente(docente): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="composition">◆</div>
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div class="multiplicity">1..*</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">NotaEstudiante</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- nota: float</div>
+                <div class="attr">- periodo: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ mostrarNota(): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="inheritance">△</div>
+            <div class="line-v"></div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Docente</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- especialidad: String</div>
+                <div class="attr">- contacto: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ asignarMateria(materia): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="diamond">◇</div>
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div class="multiplicity">1..*</div>
+        </div>
+
+        <div class="relation-group">
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div>─────</div>
+            <div class="multiplicity">1..*</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Examen</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- fecha: Date</div>
+                <div class="attr">- tipo: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ programar(): void</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="uml" style="margin-top: 30px;">
+
+        <div class="class">
+            <div class="class-header">Ambiente</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- codigo: String</div>
+                <div class="attr">- tipo: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ reservar(): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="multiplicity">0..*</div>
+            <div class="line-v"></div>
+            <div>─────</div>
+            <div class="multiplicity">1</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">ItinerarioExamen</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- periodo: String</div>
+                <div class="attr">- horario: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ generarItinerario(): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div>─────</div>
+            <div class="multiplicity">1..*</div>
+        </div>
+
+        <div class="class">
+            <div class="class-header">Kardex</div>
+            <div class="class-section">
+                <h4>Atributos</h4>
+                <div class="attr">- gestion: String</div>
+                <div class="attr">- estado: String</div>
+            </div>
+            <div class="class-section">
+                <h4>Métodos</h4>
+                <div class="method">+ inscribirEstudiante(estudiante, materia): void</div>
+                <div class="method">+ registrarNota(estudiante, materia, nota): void</div>
+            </div>
+        </div>
+
+        <div class="relation-group">
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div>─────</div>
+            <div class="multiplicity">1..*</div>
+        </div>
+
+        <div class="relation-group">
+            <div class="multiplicity">1</div>
+            <div class="line-v"></div>
+            <div>─────</div>
+            <div class="multiplicity">1..*</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
