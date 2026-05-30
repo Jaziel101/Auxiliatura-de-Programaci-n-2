@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UML - Sistema RRHH</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <div class="contenedor-uml">
+        <div class="uml">
+            <div class="clase">Empleado</div>
+            <div class="atributos">
+                <ul>
+                    <li>- nombre: String</li>
+                    <li>- cargo: String</li>
+                    <li>- sueldo: float</li>
+                </ul>
+            </div>
+            <div class="metodos">
+                <ul>
+                    <li>+ __init__(nombre, cargo, sueldo)</li>
+                    <li>+ mostrar_info(): void</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="relacion">
+            <div>◇</div>
+            <div>1</div>
+            <div>|</div>
+            <div>0..*</div>
+        </div>
+
+        <div class="uml">
+            <div class="clase">Empresa</div>
+            <div class="atributos">
+                <ul>
+                    <li>- nombre: String</li>
+                    <li>- empleados: list[Empleado]</li>
+                    <li>+ SALARIO_MINIMO: int = 2500</li>
+                </ul>
+            </div>
+            <div class="metodos">
+                <ul>
+                    <li>+ __init__(nombre)</li>
+                    <li>+ registrar_empleado(): void</li>
+                    <li>+ mostrar_empleados(): void</li>
+                    <li>+ mostrar_empleado_por_indice(indice): void</li>
+                    <li>+ total_empleados(): int</li>
+                    <li>+ nomina_total(): float</li>
+                    <li>- _ingresar_cargo_valido(): String</li>
+                    <li>- _ingresar_sueldo_valido(): float</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor-uml" style="margin-top: 30px;">
+        <div class="uml excepcion">
+            <div class="clase">«exception»<br>SueldoInvalidoException</div>
+            <div class="atributos">
+                <ul>
+                    <li>- message: String</li>
+                </ul>
+            </div>
+            <div class="metodos">
+                <ul>
+                    <li>+ __init__(message)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="uml excepcion">
+            <div class="clase">«exception»<br>CargoInvalidoException</div>
+            <div class="atributos">
+                <ul>
+                    <li>- message: String</li>
+                </ul>
+            </div>
+            <div class="metodos">
+                <ul>
+                    <li>+ __init__(message)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
